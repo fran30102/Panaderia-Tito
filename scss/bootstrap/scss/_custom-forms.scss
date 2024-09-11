@@ -156,9 +156,7 @@
 }
 
 
-// switches
-//
-// Tweak a few things for switches
+
 
 .custom-switch {
   padding-left: $custom-switch-width + $custom-control-gutter;
@@ -168,7 +166,7 @@
       left: -($custom-switch-width + $custom-control-gutter);
       width: $custom-switch-width;
       pointer-events: all;
-      // stylelint-disable-next-line property-disallowed-list
+ 
       border-radius: $custom-switch-indicator-border-radius;
     }
 
@@ -178,7 +176,7 @@
       width: $custom-switch-indicator-size;
       height: $custom-switch-indicator-size;
       background-color: $custom-control-indicator-border-color;
-      // stylelint-disable-next-line property-disallowed-list
+      
       border-radius: $custom-switch-indicator-border-radius;
       @include transition(transform .15s ease-in-out, $custom-forms-transition);
     }
@@ -199,11 +197,6 @@
 }
 
 
-// Select
-//
-// Replaces the browser default select with a custom one, mostly pulled from
-// https://primer.github.io/.
-//
 
 .custom-select {
   display: inline-block;
@@ -228,16 +221,12 @@
     @if $enable-shadows {
       @include box-shadow($custom-select-box-shadow, $custom-select-focus-box-shadow);
     } @else {
-      // Avoid using mixin so we can pass custom focus shadow properly
+     
       box-shadow: $custom-select-focus-box-shadow;
     }
 
     &::-ms-value {
-      // For visual consistency with other platforms/browsers,
-      // suppress the default white text on blue background highlight given to
-      // the selected option text when the (still closed) <select> receives focus
-      // in IE and (under certain conditions) Edge.
-      // See https://github.com/twbs/bootstrap/issues/19398.
+   
       color: $input-color;
       background-color: $input-bg;
     }
@@ -255,12 +244,12 @@
     background-color: $custom-select-disabled-bg;
   }
 
-  // Hides the default caret in IE11
+ 
   &::-ms-expand {
     display: none;
   }
 
-  // Remove outline from select box in FF
+  
   &:-moz-focusring {
     color: transparent;
     text-shadow: 0 0 0 $custom-select-color;
@@ -284,9 +273,7 @@
 }
 
 
-// File
-//
-// Custom file input.
+
 
 .custom-file {
   position: relative;
@@ -309,7 +296,7 @@
     box-shadow: $custom-file-focus-box-shadow;
   }
 
-  // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
+ 
   &[disabled] ~ .custom-file-label,
   &:disabled ~ .custom-file-label {
     background-color: $custom-file-disabled-bg;
@@ -361,24 +348,19 @@
   }
 }
 
-// Range
-//
-// Style range inputs the same across browsers. Vendor-specific rules for pseudo
-// elements cannot be mixed. As such, there are no shared styles for focus or
-// active states on prefixed selectors.
+
 
 .custom-range {
   width: 100%;
   height: add($custom-range-thumb-height, $custom-range-thumb-focus-box-shadow-width * 2);
-  padding: 0; // Need to reset padding
+  padding: 0; 
   background-color: transparent;
   appearance: none;
 
   &:focus {
     outline: none;
 
-    // Pseudo-elements must be split across multiple rulesets to have an effect.
-    // No box-shadow() mixin for focus accessibility.
+ 
     &::-webkit-slider-thumb { box-shadow: $custom-range-thumb-focus-box-shadow; }
     &::-moz-range-thumb     { box-shadow: $custom-range-thumb-focus-box-shadow; }
     &::-ms-thumb            { box-shadow: $custom-range-thumb-focus-box-shadow; }
@@ -391,7 +373,7 @@
   &::-webkit-slider-thumb {
     width: $custom-range-thumb-width;
     height: $custom-range-thumb-height;
-    margin-top: ($custom-range-track-height - $custom-range-thumb-height) / 2; // Webkit specific
+    margin-top: ($custom-range-track-height - $custom-range-thumb-height) / 2;
     @include gradient-bg($custom-range-thumb-bg);
     border: $custom-range-thumb-border;
     @include border-radius($custom-range-thumb-border-radius);
@@ -407,7 +389,7 @@
   &::-webkit-slider-runnable-track {
     width: $custom-range-track-width;
     height: $custom-range-track-height;
-    color: transparent; // Why?
+    color: transparent; 
     cursor: $custom-range-track-cursor;
     background-color: $custom-range-track-bg;
     border-color: transparent;
@@ -436,7 +418,7 @@
     color: transparent;
     cursor: $custom-range-track-cursor;
     background-color: $custom-range-track-bg;
-    border-color: transparent; // Firefox specific?
+    border-color: transparent; 
     @include border-radius($custom-range-track-border-radius);
     @include box-shadow($custom-range-track-box-shadow);
   }
@@ -444,9 +426,9 @@
   &::-ms-thumb {
     width: $custom-range-thumb-width;
     height: $custom-range-thumb-height;
-    margin-top: 0; // Edge specific
-    margin-right: $custom-range-thumb-focus-box-shadow-width; // Workaround that overflowed box-shadow is hidden.
-    margin-left: $custom-range-thumb-focus-box-shadow-width;  // Workaround that overflowed box-shadow is hidden.
+    margin-top: 0; 
+    margin-right: $custom-range-thumb-focus-box-shadow-width; 
+    margin-left: $custom-range-thumb-focus-box-shadow-width;  
     @include gradient-bg($custom-range-thumb-bg);
     border: $custom-range-thumb-border;
     @include border-radius($custom-range-thumb-border-radius);
@@ -476,7 +458,7 @@
   }
 
   &::-ms-fill-upper {
-    margin-right: 15px; // arbitrary?
+    margin-right: 15px; 
     background-color: $custom-range-track-bg;
     @include border-radius($custom-range-track-border-radius);
   }
