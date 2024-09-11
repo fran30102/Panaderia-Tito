@@ -1,11 +1,4 @@
-// Embedded icons from Open Iconic.
-// Released under MIT and copyright 2014 Waybury.
-// https://useiconic.com/open
 
-
-// Checkboxes and radios
-//
-// Base class takes care of all the key behavioral aspects.
 
 .custom-control {
   position: relative;
@@ -13,7 +6,7 @@
   display: block;
   min-height: $font-size-base * $line-height-base;
   padding-left: $custom-control-gutter + $custom-control-indicator-size;
-  color-adjust: exact; // Keep themed appearance for print
+  color-adjust: exact; 
 }
 
 .custom-control-inline {
@@ -24,7 +17,7 @@
 .custom-control-input {
   position: absolute;
   left: 0;
-  z-index: -1; // Put the input behind the label so it doesn't overlay text
+  z-index: -1; 
   width: $custom-control-indicator-size;
   height: ($font-size-base * $line-height-base + $custom-control-indicator-size) / 2;
   opacity: 0;
@@ -37,7 +30,7 @@
   }
 
   &:focus ~ .custom-control-label::before {
-    // the mixin is not used here to make sure there is feedback
+  
     @if $enable-shadows {
       box-shadow: $input-box-shadow, $custom-control-indicator-focus-box-shadow;
     } @else {
@@ -56,7 +49,7 @@
     @include box-shadow($custom-control-indicator-active-box-shadow);
   }
 
-  // Use [disabled] and :disabled to work around https://github.com/twbs/bootstrap/issues/28247
+  
   &[disabled],
   &:disabled {
     ~ .custom-control-label {
@@ -69,9 +62,7 @@
   }
 }
 
-// Custom control indicators
-//
-// Build the custom controls out of pseudo-elements.
+
 
 .custom-control-label {
   position: relative;
@@ -80,7 +71,7 @@
   vertical-align: top;
   cursor: $custom-control-cursor;
 
-  // Background-color and (when enabled) gradient
+
   &::before {
     position: absolute;
     top: ($font-size-base * $line-height-base - $custom-control-indicator-size) / 2;
@@ -95,7 +86,7 @@
     @include box-shadow($custom-control-indicator-box-shadow);
   }
 
-  // Foreground (icon)
+  
   &::after {
     position: absolute;
     top: ($font-size-base * $line-height-base - $custom-control-indicator-size) / 2;
@@ -109,9 +100,7 @@
 }
 
 
-// Checkboxes
-//
-// Tweak just a few things for checkboxes.
+
 
 .custom-checkbox {
   .custom-control-label::before {
@@ -145,13 +134,11 @@
   }
 }
 
-// Radios
-//
-// Tweak just a few things for radios.
+
 
 .custom-radio {
   .custom-control-label::before {
-    // stylelint-disable-next-line property-disallowed-list
+   
     border-radius: $custom-radio-indicator-border-radius;
   }
 
