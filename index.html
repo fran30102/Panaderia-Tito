@@ -119,7 +119,7 @@
         <div class="container">
             <div class="section-title">
                 <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Nuestros servicios</h4>
-                <h1 class="display-4">Fresco,barato y rapido</h1>
+                <h1 class="display-4">Fresco, barato y rapido</h1>
             </div>
             <div class="row">
                 <div class="col-lg-6 mb-5">
@@ -275,8 +275,7 @@
                                 <h1 class="display-3 text-primary">30% OFF</h1>
                                 <h1 class="text-white">Solo por reserva online</h1>
                             </div>
-                            <p class="text-white">Haz tu pedido a través de nuestra página web y disfruta de un 30% de descuento en todos nuestros productos. ¡Es fácil, rápido y conveniente.
-                            </p>
+                            <p class="text-white">Haz tu pedido a través de nuestra página web y disfruta de un 30% de descuento en todos nuestros productos. ¡Es fácil, rápido y conveniente!</p>
                             <ul class="list-inline text-white m-0">
                                 <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Personaliza tu pedido</li>
                                 <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Entrega rápida</li>
@@ -285,32 +284,27 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
-                            <h1 class="text-white mb-4 mt-5">Pedi lo que quieras</h1>
-                            <form class="mb-5">
-                                <div class="form-group">
-                                    <input type="text" class="form-control bg-transparent border-primary p-4" placeholder="Nombre"
-                                        required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control bg-transparent border-primary p-4" placeholder="Email"
-                                        required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Fecha" data-target="#date" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Tiempo de entrega" data-target="#time" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div>
-                                    <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit">Enviar</button>
-                                </div>
+                        <!-- Formulario -->
+                        <form id="pedidoForm">
+                            <div class="form-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pedido">Pedido:</label>
+                                <!-- Cambiar 'rows' a 2 y agregar clase 'small-textarea' -->
+                                <textarea class="form-control small-textarea" id="pedido" rows="2" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Pedido por WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+                  
+                               
                             </form>
                         </div>
                     </div>
