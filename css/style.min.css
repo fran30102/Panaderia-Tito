@@ -1,5 +1,8 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
 .small-textarea {
-    height: 80px;
+    height: 20px;
     /* Ajusta la altura a lo que prefieras */
     max-height: 120px;
     resize: none;
