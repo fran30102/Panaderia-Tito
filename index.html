@@ -393,15 +393,18 @@
                     <p>2.00 PM - 8.00 PM</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
+            <div  class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;text-align: center;">Hoja de reclamaciones</h4>
                 <p>Si tenes alguna queja,ayudanos a mejorar y escribenos</p>
                 <div class="w-100">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Tu email">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary font-weight-bold px-3">Enviar</button>
-                        </div>
+                    <form class="form_contact">
+                        <div class="user_info">
+                            <label class="label" for="names">Nombre:</label>
+                            <input type="text" class="input-text" id="names" placeholder="Ingresa tu nombre" required>
+                            <label class="label" for="pedido">Pedido detallado:</label>
+                            <textarea class="textarea" id="pedido" rows="4" placeholder="Escribe tu pedido con detalles" required></textarea>
+                            <input type="button" value="Enviar Mensaje" id="send" class="input-button">
+                      
                     </div>
                 </div>
             </div>
