@@ -176,7 +176,7 @@
                     
                     <input type="submit" value="Enviar" class="btn btn-primary mt-3" style="width: 200px;">
                     
-                    <!-- Campos ocultos -->
+                    
                     <input type="hidden" name="_captcha" value="false">
                 </div>
             </form>
@@ -185,12 +185,11 @@
     
     <script>
         document.getElementById('noRedirectForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita la redirección automática
+            event.preventDefault(); 
     
-            // Captura los datos del formulario
             const formData = new FormData(this);
     
-            // Envía los datos usando fetch
+            
             fetch(this.action, {
                 method: 'POST',
                 body: formData,
@@ -419,15 +418,50 @@
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;text-align: center;">Hoja de reclamaciones</h4>
                 <p>Si tenes alguna queja,ayudanos a mejorar y escribenos</p>
                 <div class="w-100">
-                    <form class="form_contact">
+                    <form class="form_contact" id="formContact" action="https://formsubmit.co/cuenta302323@gmail.com" method="POST">
                         <div class="user_info">
                             <label class="label" for="names">Nombre:</label>
-                            <input type="text" class="input-text" id="names" placeholder="Ingresa tu nombre" required>
+                            <input type="text" class="input-text" id="names" name="nombre" placeholder="Ingresa tu nombre" required>
+                            
                             <label class="label" for="pedido">Pedido detallado:</label>
-                            <textarea class="textarea" id="pedido" rows="4" placeholder="Escribe tu pedido con detalles" required></textarea>
-                            <input type="button" value="Enviar Mensaje" id="send" class="input-button">
-                      
-                    </div>
+                            <textarea class="textarea" id="pedido" name="pedido" rows="4" placeholder="Escribe tu pedido con detalles" required></textarea>
+                            
+                            <input type="submit" value="Enviar Mensaje" id="send" class="input-button">
+                            
+                            <!-- Campos ocultos para manejar el servicio -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="http://tusitio.com/gracias.html">
+                        </div>
+                    </form>
+                </div>
+                
+                <script>
+                    document.getElementById('formContact').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Evita la redirección automática
+                
+                        // Captura los datos del formulario
+                        const formData = new FormData(this);
+                
+                        // Envía los datos usando fetch
+                        fetch(this.action, {
+                            method: 'POST',
+                            body: formData,
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                alert('Mensaje enviado exitosamente.');
+                                // Opcional: limpiar el formulario después del envío
+                                this.reset();
+                            } else {
+                                alert('Hubo un error al enviar el mensaje.');
+                            }
+                        })
+                        .catch(error => {
+                            alert('Error: ' + error.message);
+                        });
+                    });
+                </script>
+                
                 </div>
             </div>
         </div>

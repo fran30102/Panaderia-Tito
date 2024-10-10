@@ -183,16 +183,54 @@
                     <p>2.00 PM - 8.00 PM</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
+            <div  class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;text-align: center;">Hoja de reclamaciones</h4>
                 <p>Si tenes alguna queja,ayudanos a mejorar y escribenos</p>
                 <div class="w-100">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Tu email">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary font-weight-bold px-3">Enviar</button>
+                    <form class="form_contact" id="formContact" action="https://formsubmit.co/cuenta302323@gmail.com" method="POST">
+                        <div class="user_info">
+                            <label class="label" for="names">Nombre:</label>
+                            <input type="text" class="input-text" id="names" name="nombre" placeholder="Ingresa tu nombre" required>
+                            
+                            <label class="label" for="pedido">Pedido detallado:</label>
+                            <textarea class="textarea" id="pedido" name="pedido" rows="4" placeholder="Escribe tu pedido con detalles" required></textarea>
+                            
+                            <input type="submit" value="Enviar Mensaje" id="send" class="input-button">
+                            
+                            <!-- Campos ocultos para manejar el servicio -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="http://tusitio.com/gracias.html">
                         </div>
-                    </div>
+                    </form>
+                </div>
+                
+                <script>
+                    document.getElementById('formContact').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Evita la redirección automática
+                
+                        // Captura los datos del formulario
+                        const formData = new FormData(this);
+                
+                        // Envía los datos usando fetch
+                        fetch(this.action, {
+                            method: 'POST',
+                            body: formData,
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                alert('Mensaje enviado exitosamente.');
+                                // Opcional: limpiar el formulario después del envío
+                                this.reset();
+                            } else {
+                                alert('Hubo un error al enviar el mensaje.');
+                            }
+                        })
+                        .catch(error => {
+                            alert('Error: ' + error.message);
+                        });
+                    });
+                </script>
+                
                 </div>
             </div>
         </div>
