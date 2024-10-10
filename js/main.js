@@ -1,3 +1,26 @@
+const evento = document.getElementById('send');
+
+const enviarFormulario = () => {
+    let names = document.getElementById('names').value; // Cambié 'names' a 'nombre'
+    let apellido = document.getElementById('apellido').value; // Cambié 'phone' a 'apellido'
+    let email = document.getElementById('email').value;
+    let pedido = document.getElementById('pedido').value; // Cambié 'asunto' a 'pedido'
+    let numero = 541126429710; // Puedes cambiar este número según sea necesario
+
+    // Crea el mensaje para enviar por WhatsApp
+    let mensaje = `Solicitud%20de%20Pedido%0A
+        Nombre%20y%20Apellido:%20${names} ${apellido}%0A
+        Correo:%20${email}%0A
+        Detalles:%20${pedido}%0A`;
+
+    // Abre la ventana de WhatsApp con el mensaje predefinido
+    var win = window.open(`https://wa.me/${numero}?text=${mensaje}`, '_blank');
+};
+
+// Añadir el evento al botón
+evento.addEventListener('click', enviarFormulario);
+
+            evento.addEventListener('click', enviarFormulario)
 (function ($) {
     "use strict";
     
