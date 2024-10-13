@@ -107,33 +107,59 @@
                 <div class="col-md-6 pb-5">
                     <div class="contact-form">
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="control-group">
-                                <input type="text" class="form-control bg-transparent p-4" id="name" placeholder="Tu nombre"
+                        <form class="form_contact" name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="user_info">
+                                <label class="label" for="name">Nombre:</label>
+                                <input type="text" class="input-text form-control bg-transparent p-4" id="name" placeholder="Ingresa tu nombre"
                                     required="required" data-validation-required-message="Please enter your name" />
                                 <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <input type="email" class="form-control bg-transparent p-4" id="email" placeholder="Tu Email"
+                
+                                <label class="label" for="email">Email:</label>
+                                <input type="email" class="input-text form-control bg-transparent p-4" id="email" placeholder="Ingresa tu correo electrónico"
                                     required="required" data-validation-required-message="Please enter your email" />
                                 <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control bg-transparent p-4" id="subject" placeholder="Sobre"
+                
+                                <label class="label" for="subject">Asunto:</label>
+                                <input type="text" class="input-text form-control bg-transparent p-4" id="subject" placeholder="Ingresa el asunto"
                                     required="required" data-validation-required-message="Please enter a subject" />
                                 <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control bg-transparent py-3 px-4" rows="5" id="message" placeholder="Mensaje"
-                                    required="required"
-                                    data-validation-required-message="Cuerpo"></textarea>
+                
+                                <label class="label" for="message">Mensaje:</label>
+                                <textarea class="textarea form-control bg-transparent py-3 px-4" id="message" rows="5" placeholder="Escribe tu mensaje"
+                                    required="required" data-validation-required-message="Please enter your message"></textarea>
                                 <p class="help-block text-danger"></p>
+                
+                                <input type="button" value="Enviar Mensaje" id="sendMessageButton" class="input-button btn btn-primary font-weight-bold py-3 px-5">
                             </div>
-                            <div>
-                                <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit" id="sendMessageButton">Enviar mensaje</button>
-                            </div>
+                
+                            <script>
+                                const enviarFormularioContact = () => {
+                                    let name = document.getElementById('name').value; // Nombre
+                                    let email = document.getElementById('email').value; // Correo
+                                    let subject = document.getElementById('subject').value; // Asunto
+                                    let message = document.getElementById('message').value; // Mensaje
+                                    let numero = 541126429710; // Cambia este número según sea necesario
+                
+                                    // Crea el mensaje para enviar por WhatsApp
+                                    let mensaje = `Formulario%20de%20Contacto%0A
+                                        Nombre:%20${name}%0A
+                                        Correo:%20${email}%0A
+                                        Asunto:%20${subject}%0A
+                                        Mensaje:%20${message}%0A`;
+                
+                                    // Abre la ventana de WhatsApp con el mensaje predefinido
+                                    var win = window.open(`https://wa.me/${numero}?text=${mensaje}`, '_blank');
+                                };
+                
+                                // Añadir el evento al botón
+                                document.getElementById('sendMessageButton').addEventListener('click', enviarFormularioContact);
+                            </script>
                         </form>
                     </div>
+                </div>
+                
+                </div>
+                
                 </div>
             </div>
         </div>
@@ -234,10 +260,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-        
-            <p class="m-0 text-white">  Diseñada por franc <a  >Panaderia Tito</a></p>
-        </div>
+       
     </div>
     
    
