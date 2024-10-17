@@ -174,7 +174,7 @@
                             
                             <input type="submit" value="Enviar Mensaje" id="send" class="input-button">
                             
-                            <!-- Campos ocultos para manejar el servicio -->
+                          
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_next" value="http://tusitio.com/gracias.html">
                         </div>
@@ -183,12 +183,12 @@
                 
                 <script>
                     document.getElementById('formContact').addEventListener('submit', function(event) {
-                        event.preventDefault(); // Evita la redirección automática
+                        event.preventDefault(); 
                 
-                        // Captura los datos del formulario
+                       
                         const formData = new FormData(this);
                 
-                        // Envía los datos usando fetch
+                     
                         fetch(this.action, {
                             method: 'POST',
                             body: formData,
@@ -196,7 +196,7 @@
                         .then(response => {
                             if (response.ok) {
                                 alert('Mensaje enviado exitosamente.');
-                                // Opcional: limpiar el formulario después del envío
+                            
                                 this.reset();
                             } else {
                                 alert('Hubo un error al enviar el mensaje.');
@@ -211,10 +211,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-        
-            <p class="m-0 text-white">  Diseñada por franc <a  >Panaderia Tito</a></p>
-        </div>
+      
     </div>
     
    

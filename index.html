@@ -428,14 +428,14 @@
                             
                             <input type="submit" value="Enviar Mensaje" id="send" class="input-button">
                             
-                            <!-- Campos ocultos para manejar el servicio -->
+                           
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_next" value="http://tusitio.com/gracias.html">
                             <script>
                                 document.getElementById('formContact').addEventListener('submit', function(event) {
-                                    event.preventDefault(); // Evita la redirección automática
+                                    event.preventDefault(); 
                             
-                                    // Captura los datos del formulario
+                                    
                                     const formData = new FormData(this);
                             
                                     // Envía los datos usando fetch
