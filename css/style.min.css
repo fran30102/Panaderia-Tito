@@ -1,3 +1,55 @@
+/* Estilos generales para la clase responsive-reservation */
+.responsive-reservation {
+    width: 100%; /* Ocupar el 100% del ancho */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.responsive-reservation .p-5 {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ajusta la altura del contenedor */
+}
+
+.responsive-reservation h1 {
+    font-size: 3rem;
+}
+
+.responsive-reservation p {
+    text-align: center;
+    color: #fff !important;
+    width: 80%; /* Ajuste de ancho para texto */
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+.responsive-reservation ul {
+    padding: 0;
+    text-align: left; /* Por defecto, alineado a la izquierda */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .responsive-reservation .p-5 {
+        padding: 1.5rem;
+    }
+
+    .responsive-reservation h1 {
+        font-size: 2.5rem;
+    }
+
+    .responsive-reservation p {
+        width: 100%; /* Texto ocupa todo el ancho en pantallas pequeñas */
+    }
+
+    .responsive-reservation ul {
+        text-align: center; /* Centrar los items en pantallas pequeñas */
+    }
+}
+
+
 .form-group {
     max-width: 600px; /* Ancho máximo del formulario */
     margin: 50px auto; /* Centrar el formulario */

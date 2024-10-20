@@ -165,23 +165,30 @@
     
             <form id="noRedirectForm" action="https://formsubmit.co/cuenta302323@gmail.com" method="POST">
                 <div class="input-group mb-3 d-flex flex-column align-items-center">
-                    
-                    <input type="text" id="nombre" class="form-control p-4 mb-3" placeholder="Nombre" name="nombre" required style="max-width: 800px;width: 1500px;">
-                    
-                    <input type="text" id="apellido" class="form-control p-4 mb-3" placeholder="Apellido" name="apellido" required style="max-width: 800px;width: 1500px;">
-                    
-                    <input type="tel" id="telefono" class="form-control p-4 mb-3" placeholder="Número de Teléfono" name="telefono" required style="max-width: 800px;width: 1500px;">
-                    
-                    <input type="email" id="email" class="form-control p-4 mb-3" placeholder="Tu Email" name="email" required style="max-width: 800px;width: 1500px;">
-                    
+                    <input type="text" id="nombre" class="form-control p-4 mb-3" placeholder="Nombre" name="nombre" required style="max-width: 800px; width: 100%;">
+                    <input type="text" id="apellido" class="form-control p-4 mb-3" placeholder="Apellido" name="apellido" required style="max-width: 800px; width: 100%;">
+                    <input type="tel" id="telefono" class="form-control p-4 mb-3" placeholder="Número de Teléfono" name="telefono" required style="max-width: 800px; width: 100%;">
+                    <input type="email" id="email" class="form-control p-4 mb-3" placeholder="Tu Email" name="email" required style="max-width: 800px; width: 100%;">
                     <input type="submit" value="Enviar" class="btn btn-primary mt-3" style="width: 200px;">
-                    
-                    
                     <input type="hidden" name="_captcha" value="false">
                 </div>
+    
+                <style>
+                    /* Estilos responsivos solo para este formulario */
+                    @media (max-width: 768px) {
+                        #noRedirectForm .form-control {
+                            max-width: 100% !important;
+                            width: 100% !important;
+                        }
+                        #noRedirectForm .btn {
+                            width: 100%;
+                        }
+                    }
+                </style>
             </form>
         </div>
     </div>
+    
     
     <script>
         document.getElementById('noRedirectForm').addEventListener('submit', function(event) {
@@ -287,23 +294,22 @@
     </div>
    
     <div class="container-fluid my-5">
-        <div class="container">
-            <div class="reservation position-relative overlay-top overlay-bottom">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 my-5 my-lg-0">
-                        <div class="p-5">
-                            <div class="mb-4" style="width: 5000px;">
-                                <h1 class="display-3 text-primary" style="margin-left: 350px;">30% OFF</h1>
-                                <h1 class="text-white" style="margin-left: 300px;">Solo por reserva online</h1>
-                            </div>
-                            <p style="width: 1000px;text-align: center;color: #fff !important;">Haz tu pedido a través de nuestra página web y disfruta de un 30% de descuento en todos nuestros productos. ¡Es fácil, rápido y conveniente!</p>
-                            <ul class="list-inline text-white m-0">
-                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Personaliza tu pedido</li>
-                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Entrega rápida</li>
-                                <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Paga de forma segura</li>
-                            </ul>
+        <div class="reservation responsive-reservation position-relative overlay-top overlay-bottom">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 my-5">
+                    <div class="p-5 d-flex flex-column align-items-center justify-content-center">
+                        <div class="mb-4 text-center">
+                            <h1 class="display-3 text-primary">30% OFF</h1>
+                            <h1 class="text-white">Solo por reserva online</h1>
                         </div>
+                        <p class="text-white text-center">Haz tu pedido a través de nuestra página web y disfruta de un 30% de descuento en todos nuestros productos. ¡Es fácil, rápido y conveniente!</p>
+                        <ul class="list-inline text-white m-0 text-lg-left text-md-left text-center">
+                            <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Personaliza tu pedido</li>
+                            <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Entrega rápida</li>
+                            <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Paga de forma segura</li>
+                        </ul>
                     </div>
+                </div>
                     <div style=" background: none;" class="form-group">
                         <form class="form_contact">
                             <div class="user_info">
@@ -317,8 +323,6 @@
                             </div>
                         </form>
                     </div>
-                    
-                    
                 </div>
             </div>
         </div>
